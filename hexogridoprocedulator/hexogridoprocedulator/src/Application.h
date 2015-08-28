@@ -1,7 +1,7 @@
 #pragma once
 #include "Includes.h"
 // #include "StateManager.h"
-// #include "TextureManager.h"
+#include "TextureManager.h"
 // #include "AnimationHandler.h"
 
 // #include "SPGameState.h"
@@ -12,16 +12,16 @@
 class Application {
 private:
   // StateManager* stManager;
-  // TextureManager* texManager;
+  TextureManager* texManager;
   // AnimationHandler* aniHandler;
-  // RenderWindow* window;
+  RenderWindow* window;
   // View* camera;
 
   // Font font;
 
 public:
   void appMainLoop();
-  // void appDraw();
+  void appDraw();
   // void appEvent();
   // void appUpdate();
 
