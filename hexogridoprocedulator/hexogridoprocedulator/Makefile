@@ -38,4 +38,4 @@ $(ObjectsDir)%$(ObjectSuffix): $(SourcesDir)%$(SourcesSuffix)
 ##
 clean:
 	-rm -r -f $(ObjectsDir)
-	-rm -f -f $(ProjectPath)
+	-rm -r -f $(ProjectPath)
