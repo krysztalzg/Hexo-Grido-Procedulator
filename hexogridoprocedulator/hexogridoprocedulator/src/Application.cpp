@@ -80,7 +80,6 @@ Application::Application() {
   window = new RenderWindow();
   window->create(VideoMode(1280, 720), "Hexo Grido Procedulator by Krysztal");
   window->clear(Color::Black);
-  //window->setFramerateLimit(60);
   window->setVerticalSyncEnabled(true);
   
   Vector2i windowPos = window->getPosition();
