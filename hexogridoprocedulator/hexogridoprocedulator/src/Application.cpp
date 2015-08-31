@@ -1,11 +1,13 @@
 #include "Application.h"
 
 void Application::appMainLoop() {
-  while (window->isOpen()) {
+  /*while (window->isOpen()) {
     // appEvent();
     // appUpdate();
     appDraw();
-  }
+  }*/
+  for (int i = 0; i < 5; ++i)
+    cout << "dupa" << endl;
 }
 
 void Application::appDraw() {
@@ -73,13 +75,14 @@ void Application::appDraw() {
 Application::Application() {
   // font.loadFromFile("resources/fonts/PressStart2P.ttf");
 
-  texManager = new TextureManager();
+  //texManager = new TextureManager();
   // stManager = new StateManager(font, texManager);
   // aniHandler = new AnimationHandler();
 
   window = new RenderWindow();
   window->create(VideoMode(1280, 720), "Hexo Grido Procedulator by Krysztal");
   window->clear(Color::Black);
+  //window->setFramerateLimit(60);
   window->setVerticalSyncEnabled(true);
   
   Vector2i windowPos = window->getPosition();
