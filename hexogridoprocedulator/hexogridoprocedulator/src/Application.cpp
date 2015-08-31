@@ -1,17 +1,26 @@
 #include "Application.h"
+#include <typeinfo>
+
 
 void Application::appMainLoop() {
-  /*while (window->isOpen()) {
+  while (window->isOpen()) {
     // appEvent();
     // appUpdate();
     appDraw();
-  }*/
-  for (int i = 0; i < 5; ++i)
-    cout << "dupa" << endl;
+  }
 }
 
 void Application::appDraw() {
   window->clear(Color::Black);
+  // window->clear(Color(rand()%255,rand()%255,rand()%255));
+  // sleep(seconds(0.1f));
+  for(auto hexes : hexgrid->hexgrid) {
+    for (auto hex : hexes) {
+      // cout << typeid(hex->hex).name() << endl;
+      window->draw(hex->hex);
+    }
+  }
+
 
   // stManager->getActiveState()->draw(window);
 
@@ -75,14 +84,15 @@ void Application::appDraw() {
 Application::Application() {
   // font.loadFromFile("resources/fonts/PressStart2P.ttf");
 
-  //texManager = new TextureManager();
+  texManager = make_unique<TextureManager>();
   // stManager = new StateManager(font, texManager);
-  // aniHandler = new AnimationHandler();
+  // aniHandler = make_unique<AnimationHandler>();
+  hexgrid = make_unique<Grid>(5,5);
 
-  window = new RenderWindow();
+  window = make_unique<RenderWindow>();
   window->create(VideoMode(1280, 720), "Hexo Grido Procedulator by Krysztal");
   window->clear(Color::Black);
-  //window->setFramerateLimit(60);
+  window->setFramerateLimit(60);
   window->setVerticalSyncEnabled(true);
   
   Vector2i windowPos = window->getPosition();

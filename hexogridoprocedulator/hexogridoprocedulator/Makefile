@@ -7,7 +7,7 @@ IncludePath := -I
 LibPath := -L
 
 Libs := -lsfml-graphics -lsfml-window -lsfml-system
-CompFlags := -w -Wall -std=c++0x
+CompFlags := -w -Wall -std=c++1y
 
 SourcesDir := src/
 ObjectsDir := obj/

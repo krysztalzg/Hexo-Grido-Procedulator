@@ -6,7 +6,7 @@
 int main() {
   srand((unsigned int)time(NULL));
 
-  unique_ptr<Application> app(new Application());
+  auto app = make_unique<Application>();
 
   app->appMainLoop();
 
