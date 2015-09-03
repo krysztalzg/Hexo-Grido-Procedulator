@@ -15,7 +15,7 @@ private:
   // StateManager* stManager;
   unique_ptr<TextureManager> texManager;
   unique_ptr<AnimationHandler> aniHandler;
-  unique_ptr<RenderWindow> window;
+  shared_ptr<RenderWindow> window;
   unique_ptr<View> camera;
   unique_ptr<Grid> hexgrid;
 

@@ -14,13 +14,7 @@ void Application::appDraw() {
   window->clear(Color::Black);
   // window->clear(Color(rand()%255,rand()%255,rand()%255));
   // sleep(seconds(0.1f));
-  for(auto hexes : hexgrid->hexgrid) {
-    for (auto hex : hexes) {
-      // cout << typeid(hex->hex).name() << endl;
-      window->draw(hex->hex);
-    }
-  }
-
+  hexgrid->draw(window);
 
   // stManager->getActiveState()->draw(window);
 
@@ -89,7 +83,7 @@ Application::Application() {
   // aniHandler = make_unique<AnimationHandler>();
   hexgrid = make_unique<Grid>(5,5);
 
-  window = make_unique<RenderWindow>();
+  window = make_shared<RenderWindow>();
   window->create(VideoMode(1280, 720), "Hexo Grido Procedulator by Krysztal");
   window->clear(Color::Black);
   window->setFramerateLimit(60);

@@ -8,6 +8,7 @@ private:
 public:
   vector <vector <Hex*>> hexgrid;
 
+  void draw(shared_ptr<RenderWindow>);
   Grid(int, int);
   virtual ~Grid();
 };
